@@ -4,7 +4,7 @@
   com.salonschedule.DAO.User: Den
   Date: 18.12.2018
   Time: 18:29
-  To change this template use File | Settings | File Templates.
+  To change this template use File | Settings | File Templates. ---------------
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
