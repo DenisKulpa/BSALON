@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/unloggeduser", name="UnloggedUsersController")
+@WebServlet(urlPatterns = "/guestmodepage", name="UnloggedUsersController")
 public class UnloggedUsersController extends HttpServlet {
     MyModel myModel = new MyModel();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

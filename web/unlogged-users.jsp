@@ -16,7 +16,7 @@
         @import url('https://fonts.googleapis.com/css?family=Asap');
         h1 {
             font-family: 'Roboto Condensed', sans-serif;
-            font-size: 25pt; /* Размер шрифта в пунктах */
+            font-size: 22pt; /* Размер шрифта в пунктах */
         }
         h2 {
             font-family: 'Asap', sans-serif;
@@ -81,6 +81,8 @@ ${Masters[5].getName()}&nbsp;${Masters[5].getSurname()}&nbsp;&nbsp;${Masters[5].
             </c:forEach>
         </tr>
     </table>
+    <br>
+
 </h1>
 </body>
 </html>
