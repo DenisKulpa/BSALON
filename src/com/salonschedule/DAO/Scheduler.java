@@ -17,7 +17,7 @@ public class Scheduler {
         this.id = id;
     }
 
-    public ArrayList getTimeInterval() {
+    public ArrayList<String> getTimeInterval() {
         return timeInterval;
     }
 

@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/guestmodepage", name="UnloggedUsersController")
-public class UnloggedUsersController extends HttpServlet {
+@WebServlet(urlPatterns = "/guestmodepage", name="GuestmodeController")
+public class GuestmodeController extends HttpServlet {
     MyModel myModel = new MyModel();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -57,8 +57,7 @@ public class UnloggedUsersController extends HttpServlet {
         request.setAttribute("masterFreeTimeId6", masterTimeId6);
 
 
-
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/unlogged-users.jsp"); //keysensitive
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/guestmodepage.jsp"); //keysensitive
         requestDispatcher.forward(request,response);
 
     }

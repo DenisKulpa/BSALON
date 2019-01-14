@@ -17,7 +17,7 @@ public class MastersScheduler extends javax.servlet.http.HttpServlet {
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
         Scheduler masterTimeInfo = myModel.getTimeScheduler(3);
-        response.setContentType("text/html; charset=UTF-8");
+
         request.setAttribute("Scheduler", masterTimeInfo);
 
         ArrayList<String> timeFromTable =masterTimeInfo.getTimeInterval(); //

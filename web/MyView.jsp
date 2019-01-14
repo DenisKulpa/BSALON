@@ -27,10 +27,6 @@
     </style>
 </head>
 <body>
-    <jsp:useBean id="Master" class="com.salonschedule.DAO.Master" scope="request"/>
-    <h1><jsp:getProperty name="Master" property="name" /> &nbsp;
-    <jsp:getProperty name="Master" property="masrersid" /></h1>
-
     <br>
 Hey,hey it is done!
 </body>
