@@ -31,8 +31,8 @@ ${Masters[0].getName()}&nbsp;${Masters[0].getSurname()}&nbsp;&nbsp;${Masters[0].
     <font size="3" color="green" face="Arial">вакантное время:</font>
     <table border="1">
         <tr>
-            <c:forEach var="time" items="${masterFreeTimeId1}">
-                <td><c:out value="${time}"/></td>
+            <c:forEach var="time" items="${masterFreeTimeId1TEST.getTimeObj()}">
+                <td><c:out value="${time.getTimeInterval()}"/></td>
             </c:forEach>
         </tr>
     </table>

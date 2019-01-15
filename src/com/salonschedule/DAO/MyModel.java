@@ -58,10 +58,10 @@ public class MyModel {
 
             Statement statement = con.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("SELECT time_interval  FROM masters_schedule where "+idNomber+"='1'");
+            ResultSet resultSet = statement.executeQuery("SELECT *  FROM masters_schedule where "+idNomber+"='1'");
             while (resultSet.next()) {
                // masterInfo.setId(resultSet.getString("id"));
-                masterInfo.setTimeInterval(resultSet.getString("time_interval"));
+                masterInfo.setTimeInterval(resultSet.getString("time_interval"),resultSet.getInt("id"));
             }
             //masterInfo.setId("2111");
 
@@ -72,5 +72,48 @@ public class MyModel {
             e.printStackTrace();
         }
         return masterInfo;
+    }
+
+    // check if Masters time is free
+    public boolean checkIfFree(int idNext, int idEnd, String masterIdBusy) {
+
+        ArrayList<Integer> mas = new ArrayList<>();
+        boolean status = false;
+
+        try(Connection con = ConnectorDB.getConnection()){
+
+            Statement statement = con.createStatement();
+
+            ResultSet resultSet = statement.executeQuery("SELECT "+masterIdBusy+" FROM masters_schedule WHERE (ID) BETWEEN "+idNext+" AND "+idEnd+"");
+            while (resultSet.next()) {
+                mas.add(resultSet.getInt("id1busy"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        if (!mas.contains(1)){
+            status = true;
+        }
+        return status;
+    }
+
+    public void insertBusyTime(int idTime, int idTimeEnd, String masterIdBusy, String masterIdFree) {
+
+        try(Connection con = ConnectorDB.getConnection()){
+
+            Statement statement = con.createStatement();
+
+            statement.executeUpdate("UPDATE masters_schedule SET "+masterIdBusy+" = 1 WHERE (ID) BETWEEN "+idTime+" AND "+idTimeEnd+"");
+            statement.executeUpdate("UPDATE masters_schedule SET "+masterIdFree+" = NULL WHERE (ID) BETWEEN "+idTime+" AND "+idTimeEnd+"");
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

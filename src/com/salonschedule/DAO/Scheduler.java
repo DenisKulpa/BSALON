@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Scheduler {
 
     private String id;
-    private ArrayList<String> timeInterval = new ArrayList<>();
+    // создать arraylist обектов interval (c временем и id)
+    private ArrayList<TimeObj> timeObj = new ArrayList<>();
     private String idbusy;
     private String idfree;
 
@@ -17,12 +18,15 @@ public class Scheduler {
         this.id = id;
     }
 
-    public ArrayList<String> getTimeInterval() {
-        return timeInterval;
+    public ArrayList<TimeObj> getTimeObj() {
+        return timeObj;
     }
 
-    public void setTimeInterval(String timeInterval) {
-        this.timeInterval.add(timeInterval);
+    public void setTimeInterval(String timeInterval,int id) {
+        TimeObj obj = new TimeObj();
+        obj.setTimeInterval(timeInterval);
+        obj.setId(id);
+        this.timeObj.add(obj);
     }
 
     public String getIdbusy() {

@@ -1,5 +1,7 @@
 package com.salonschedule.controller;
 
+import com.salonschedule.DAO.MyModel;
+import com.salonschedule.DAO.Scheduler;
 import com.salonschedule.DAO.Service;
 
 import javax.servlet.RequestDispatcher;
@@ -20,6 +22,7 @@ public class MasterId1Controller extends HttpServlet {
         service.setService("some-service");
         String serv = service.getService();
         req.getSession().setAttribute("servicePar",serv);
+
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/masterId1page.jsp");
         requestDispatcher.forward(req,resp);
     }

@@ -20,8 +20,8 @@ public class MastersScheduler extends javax.servlet.http.HttpServlet {
 
         request.setAttribute("Scheduler", masterTimeInfo);
 
-        ArrayList<String> timeFromTable =masterTimeInfo.getTimeInterval(); //
-        request.setAttribute("schedulerTime", timeFromTable);
+       // ArrayList<String> timeFromTable =masterTimeInfo.getTimeInterval(); //
+       // request.setAttribute("schedulerTime", timeFromTable);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp"); //keysensitive
         requestDispatcher.forward(request,response);

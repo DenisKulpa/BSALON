@@ -6,7 +6,9 @@ import java.sql.*;
 public class Main {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException {
-        MyModel myModel = new MyModel();
+
+       // MyModel myModel = new MyModel();
+       // Scheduler obj = new Scheduler();
        // Master master = myModel.getMasters();
 //        System.out.println(master.getMasrersid());
 //        System.out.println(master.getName());

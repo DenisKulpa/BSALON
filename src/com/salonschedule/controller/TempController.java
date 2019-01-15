@@ -13,6 +13,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/TempController", name = "com.salonschedule.controller.TempController")
 public class TempController extends HttpServlet {
+
     MyModel myModel = new MyModel();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -20,9 +21,6 @@ public class TempController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        Master master = myModel.getMaster();
-//        response.setContentType("text/html; charset=UTF-8");
-//        request.setAttribute("Master", master);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/newTemp.jsp"); //keysensitive
         requestDispatcher.forward(request,response);
