@@ -1,7 +1,3 @@
-<% Master master; %>
-<% String nameStr; %>
-<%@ page import="com.salonschedule.DAO.Master" %>
-<%@ page import="com.salonschedule.DAO.MyModel" %>
 <%--
   Created by IntelliJ IDEA.
   com.salonschedule.DAO.User: Den
@@ -27,10 +23,6 @@
     </style>
 </head>
 <body>
-    <jsp:useBean id="Master" class="com.salonschedule.DAO.Master" scope="request"/>
-    <h1><jsp:getProperty name="Master" property="name" /> &nbsp;
-    <jsp:getProperty name="Master" property="masrersid" /></h1>
-
     <br>
 Hey,hey it is done!
 </body>
