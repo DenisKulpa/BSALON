@@ -1,7 +1,3 @@
-<% Master master; %>
-<% String nameStr; %>
-<%@ page import="com.salonschedule.DAO.Master" %>
-<%@ page import="com.salonschedule.DAO.MyModel" %>
 <%--
   Created by IntelliJ IDEA.
   com.salonschedule.DAO.User: Den

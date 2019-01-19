@@ -4,7 +4,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyModel {
+public class MyModel extends AbstractDAO {
+
     public List<Master> getMasters() {
 
         List<Master> masterList = new ArrayList<>();
@@ -60,7 +61,6 @@ public class MyModel {
 
             ResultSet resultSet = statement.executeQuery("SELECT *  FROM masters_schedule where "+idNomber+"='1'");
             while (resultSet.next()) {
-               // masterInfo.setId(resultSet.getString("id"));
                 masterInfo.setTimeInterval(resultSet.getString("time_interval"),resultSet.getInt("id"));
             }
             //masterInfo.setId("2111");

@@ -12,8 +12,7 @@
 </head>
 <body>
 
-<div class="form">
-
+<div style="float: right">
     <h1>Вход в систему</h1><br>
     <form method="post" action="">
 
@@ -23,6 +22,7 @@
 
     </form>
 </div>
+<a href="/test/guestmodepage.jsp">guestmpage</a>
 </body>
 </html>
 

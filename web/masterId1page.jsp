@@ -35,15 +35,15 @@
         <option value="16" >Укрепление + выравнивание ногтевой пластины (60 мин.)</option>
         <option value="17" >Аппаратный педикюр + покрытием гель-лак (90 мин.)</option>
 
-    </select><br>
+    </select><br><br>
 
-    <label>Выберете время:</label>
+    <label>Выберете время для записи:</label>
     <select name="timeId">
-        <c:forEach var="time" items="${masterFreeTimeId1TEST.getTimeObj()}">
+        <c:forEach var="time" items="${masterFreeTimeId1.getTimeObj()}">
             <option value="${time.getId()}" >${time.getTimeInterval()}</option>
         </c:forEach>
-    </select><br>
-    Напомнить:<input type="text" name="remind"><br>
+    </select><br><br>
+    <%--Напомнить:<input type="text" name="remind"><br>--%>
     <input type="submit" value="Отправить">
     <input type="hidden" name="masterIdBusy" value="id1busy">
     <input type="hidden" name="masterIdFree" value="id1free">

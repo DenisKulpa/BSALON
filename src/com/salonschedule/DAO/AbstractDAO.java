@@ -1,14 +1,12 @@
-//package com.salonschedule.DAO;
-//
-//import java.util.List;
-//
-//public abstract class AbstractDAO<K, T> {        // k - key in the table
-//
-//    public abstract List<T> findAll();
-//    public abstract T findEntityById (K id);
-//    public abstract boolean delete (K id);
-//    public abstract boolean delete (T entity);
-//    public abstract boolean create (T entity);
-//    public abstract T update (T entity);
-//
-//}
+package com.salonschedule.DAO;
+
+import java.util.List;
+
+public abstract class AbstractDAO  {
+
+    public abstract List<Master> getMasters();
+    public abstract Scheduler getTimeScheduler(int id);
+    public abstract boolean checkIfFree(int idNext, int idEnd, String masterIdBusy);
+    public abstract void insertBusyTime(int idTime, int idTimeEnd, String masterIdBusy, String masterIdFree);
+
+}

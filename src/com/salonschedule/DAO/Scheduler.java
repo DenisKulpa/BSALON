@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Scheduler {
 
     private String id;
-    // создать arraylist обектов interval (c временем и id)
     private ArrayList<TimeObj> timeObj = new ArrayList<>();
     private String idbusy;
     private String idfree;

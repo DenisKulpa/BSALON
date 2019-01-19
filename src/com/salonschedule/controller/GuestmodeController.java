@@ -16,48 +16,37 @@ import java.util.List;
 
 @WebServlet(urlPatterns = "/guestmodepage", name="GuestmodeController")
 public class GuestmodeController extends HttpServlet {
-   // OrderTimelineController controller = new OrderTimelineController();
 
     MyModel myModel = new MyModel();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        // Get a list of masters to represent them on jsp
         List<Master> masters = myModel.getMasters();
         response.setContentType("text/html; charset=UTF-8");
         request.setAttribute("Masters", masters);
 
         // receive concrete master free time
         Scheduler masterTimeInfoId1 = myModel.getTimeScheduler(1);
-       // ArrayList<String> masterTimeId1 =masterTimeInfoId1.getTimeInterval();
-        request.getSession().setAttribute("masterFreeTimeId1TEST", masterTimeInfoId1);
+        request.getSession().setAttribute("masterFreeTimeId1", masterTimeInfoId1);
 
-        //------------ need to del arrays
+        Scheduler masterTimeInfoId2 = myModel.getTimeScheduler(2);
+        request.getSession().setAttribute("masterFreeTimeId2", masterTimeInfoId2);
 
-//        // receive concrete master free time
-//        Scheduler masterTimeInfoId2 = myModel.getTimeScheduler(2);
-//        ArrayList<String> masterTimeId2 =masterTimeInfoId2.getTimeInterval();
-//        request.setAttribute("masterFreeTimeId2", masterTimeId2);
-//
-//        // receive concrete master free time
-//        Scheduler masterTimeInfoId3 = myModel.getTimeScheduler(3);
-//        ArrayList<String> masterTimeId3 =masterTimeInfoId3.getTimeInterval();
-//        request.setAttribute("masterFreeTimeId3", masterTimeId3);
-//
-//        // receive concrete master free time
-//        Scheduler masterTimeInfoId4 = myModel.getTimeScheduler(4);
-//        ArrayList<String> masterTimeId4 =masterTimeInfoId4.getTimeInterval();
-//        request.setAttribute("masterFreeTimeId4", masterTimeId4);
-//
-//        // receive concrete master free time
-//        Scheduler masterTimeInfoId5 = myModel.getTimeScheduler(5);
-//        ArrayList<String> masterTimeId5 =masterTimeInfoId5.getTimeInterval();
-//        request.setAttribute("masterFreeTimeId5", masterTimeId5);
-//
-//        // receive concrete master free time
-//        Scheduler masterTimeInfoId6 = myModel.getTimeScheduler(6);
-//        ArrayList<String> masterTimeId6 =masterTimeInfoId6.getTimeInterval();
-//        request.setAttribute("masterFreeTimeId6", masterTimeId6);
+        Scheduler masterTimeInfoId3 = myModel.getTimeScheduler(3);
+        request.getSession().setAttribute("masterFreeTimeId3", masterTimeInfoId3);
+
+        Scheduler masterTimeInfoId4 = myModel.getTimeScheduler(4);
+        request.getSession().setAttribute("masterFreeTimeId4", masterTimeInfoId4);
+
+        Scheduler masterTimeInfoId5 = myModel.getTimeScheduler(5);
+        request.getSession().setAttribute("masterFreeTimeId5", masterTimeInfoId5);
+
+        Scheduler masterTimeInfoId6 = myModel.getTimeScheduler(6);
+        //ArrayList<String> masterTimeId6 =masterTimeInfoId6.getTimeInterval();
+        request.getSession().setAttribute("masterFreeTimeId6", masterTimeInfoId6);
 
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/guestmodepage.jsp"); //keysensitive
