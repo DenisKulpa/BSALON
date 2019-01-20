@@ -22,7 +22,7 @@ public class ServicePageEventHandler extends HttpServlet {
 
         int service = Integer.parseInt(req.getParameter("serviceKind"));
         int timeId = Integer.parseInt(req.getParameter("timeId"));
-        int remind = Integer.parseInt(req.getParameter("remind"));
+       // int remind = Integer.parseInt(req.getParameter("remind"));
         String masterIdBusy = req.getParameter("masterIdBusy");
         String masterIdFree = req.getParameter("masterIdFree");
 
@@ -51,7 +51,7 @@ public class ServicePageEventHandler extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.println("service nomber: " + service);
         out.println("time id: " + timeId);
-        out.println(" remind at: " + remind);
+      //  out.println(" remind at: " + remind);
         out.println(" insert busy:  " + masterIdBusy);
         out.println(" insert free:  " + masterIdFree);
         out.println(" status:  " + tmp);

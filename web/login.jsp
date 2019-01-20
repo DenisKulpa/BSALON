@@ -22,7 +22,7 @@
 
     </form>
 </div>
-<a href="/test/guestmodepage.jsp">guestmpage</a>
+<a href="/bsalon/guestmodepage.jsp">guestmpage</a>
 </body>
 </html>
 

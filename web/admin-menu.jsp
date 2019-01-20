@@ -13,6 +13,6 @@
 </head>
 <body>
 <h1>Hello Admin!</h1>
-<a href="/test/logout">Logout</a>
+<a href="/bsalon/logout">Logout</a>
 </body>
 </html>
