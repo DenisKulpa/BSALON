@@ -1,7 +1,5 @@
 package com.salonschedule.controller;
 
-import com.salonschedule.DAO.MyModel;
-import com.salonschedule.DAO.Scheduler;
 import com.salonschedule.DAO.Service;
 
 import javax.servlet.RequestDispatcher;
@@ -11,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/masterId1page")
 public class MasterId1Controller extends HttpServlet {

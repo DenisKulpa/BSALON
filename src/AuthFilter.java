@@ -30,7 +30,7 @@ public class AuthFilter implements Filter {
         final String password = req.getParameter("password");
 
         @SuppressWarnings("unchecked")
-        final AtomicReference<UserDAO> dao = (AtomicReference<UserDAO>) req.getServletContext().getAttribute("dao");
+            final AtomicReference<UserDAO> dao = (AtomicReference<UserDAO>) req.getServletContext().getAttribute("dao");
 
         final HttpSession session = req.getSession();
 
@@ -65,6 +65,7 @@ public class AuthFilter implements Filter {
      * If access 'admin' move to admin menu.
      * If access 'user' move to user menu.
      */
+
     private void moveToMenu(final HttpServletRequest req,
                             final HttpServletResponse res,
                             final User.ROLE role)
@@ -73,11 +74,13 @@ public class AuthFilter implements Filter {
 
         if (role.equals(User.ROLE.ADMIN)) {
 
-            req.getRequestDispatcher("/admin-menu.jsp").forward(req, res);
+            res.sendRedirect("/bsalon/commonSchedule");
+            //req.getRequestDispatcher("/admin-menu.jsp").forward(req, res);
+
 
         } else if (role.equals(User.ROLE.USER)) {
 
-            req.getRequestDispatcher("/user-menu.jsp").forward(req, res);
+            req.getRequestDispatcher("/loggeduserpage.jsp").forward(req, res);
 
         } else {
 

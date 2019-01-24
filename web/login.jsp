@@ -8,38 +8,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>loginpage</title>
 </head>
 <body>
-
-<div style="float: right">
+<style>
+    body{background-color: lightgoldenrodyellow;}
+</style>
+<div align="center">
     <h1>Вход в систему</h1><br>
     <form method="post" action="">
-
-        <input type="text" required placeholder="login" name="login"><br>
+        <input type="text" required placeholder="login" name="login"><br><br>
         <input type="password" required placeholder="password" name="password"><br><br>
         <input class="button" type="submit" value="Войти">
-
+    </form>
+    <form method="post" action="">
+        <input class="button" type="submit" value="Создать аккаунт">
     </form>
 </div>
-<a href="/bsalon/guestmodepage.jsp">guestmpage</a>
 </body>
 </html>
-
-<%------%>
-<%--<body>--%>
-<%--<div class="form">--%>
-    <%--<h1>Вход в систему</h1>--%>
-    <%--<form action="login" method="post" >--%>
-        <%--<label>username:</label>--%>
-        <%--<input type="text" name="username" value="" />--%>
-        <%--<label>password:</label>--%>
-        <%--<input type="password" name="password" value="" />--%>
-        <%--<input type="submit" name="submit" value="LOGIN" />--%>
-    <%--</form>--%>
-
-<%--</div>--%>
-
-<%--<a href="/test/jsp/test1.html" target="_blank">link</a>--%>
-<%--</body>--%>
-<%------%>

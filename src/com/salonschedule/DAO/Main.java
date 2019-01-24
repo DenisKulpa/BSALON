@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException {
 
        // MyModel myModel = new MyModel();
-       // Scheduler obj = new Scheduler();
+       // MasterScheduler obj = new MasterScheduler();
        // Master master = myModel.getMasters();
 //        System.out.println(master.getMasrersid());
 //        System.out.println(master.getName());

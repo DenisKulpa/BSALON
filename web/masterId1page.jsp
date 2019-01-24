@@ -10,6 +10,16 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        body{background-color: lightgoldenrodyellow;}
+
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+        @import url('https://fonts.googleapis.com/css?family=Asap');
+        h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 18pt; /* Размер шрифта в пунктах */
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="WEB-INF/jspInclude/SokolovaNataStatikInfo.jsp" />
@@ -44,9 +54,10 @@
         </c:forEach>
     </select><br><br>
     <%--Напомнить:<input type="text" name="remind"><br>--%>
-    <input type="submit" value="Отправить">
+    <input type="submit" value="Записаться">
     <input type="hidden" name="masterIdBusy" value="id1busy">
     <input type="hidden" name="masterIdFree" value="id1free">
+    <input type="hidden" name="masterIdService" value="id1service">
 </form>
 
 </body>

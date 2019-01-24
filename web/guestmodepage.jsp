@@ -1,4 +1,4 @@
-<%@ page import="com.salonschedule.DAO.Scheduler" %>
+<%@ page import="com.salonschedule.DAO.MasterScheduler" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--<script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>--%>
 <%--
@@ -24,14 +24,7 @@
     </style>
 </head>
 <body>
-<%--<div style="float: right">--%>
-    <%--<h1>Вход в систему</h1>--%>
-    <%--<form method="post" action="">--%>
-        <%--<input type="text" required placeholder="login" name="login"><br><br>--%>
-        <%--<input type="password" required placeholder="password" name="password"><br><br>--%>
-        <%--<input class="button" type="submit" value="Войти">--%>
-    <%--</form>--%>
-<%--</div>--%>
+<h1><a href="/bsalon/login.jsp" style="float: right">Войти</a></h1>
 <h1>
 ${Masters[0].getName()}&nbsp;${Masters[0].getSurname()}&nbsp;&nbsp;${Masters[0].getSpeciality()}<br>
     <font size="4" color="green" face="Arial">вакантное время:</font>
