@@ -1,11 +1,6 @@
 package com.salonschedule.controller;
 
-import com.salonschedule.DAO.MyModel;
-import com.salonschedule.DAO.Scheduler;
-
-import javax.servlet.RequestDispatcher;
 import java.io.IOException;
-import java.util.ArrayList;
 
 @javax.servlet.annotation.WebServlet(urlPatterns = "/masters-schedule", name="MastersSchedule")
 public class MastersScheduler extends javax.servlet.http.HttpServlet {

@@ -2,7 +2,7 @@ package com.salonschedule.DAO;
 
 import java.util.ArrayList;
 
-public class Scheduler {
+public class MasterScheduler {
 
     private String id;
     private ArrayList<TimeObj> timeObj = new ArrayList<>();

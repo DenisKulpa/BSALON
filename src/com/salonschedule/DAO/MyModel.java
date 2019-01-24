@@ -33,9 +33,9 @@ public class MyModel extends AbstractDAO {
         return masterList;
     }
 
-    public Scheduler getTimeScheduler(int id) {
+    public MasterScheduler getTimeScheduler(int id) {
 
-        Scheduler masterInfo = new Scheduler();
+        MasterScheduler masterInfo = new MasterScheduler();
         try(Connection con = ConnectorDB.getConnection()){
 
             String idNomber = "nonumber";
@@ -54,7 +54,7 @@ public class MyModel extends AbstractDAO {
                 case 6:  idNomber = "id6free";
                     break;
                 default: idNomber = "setnonumber";
-                    break;
+                    throw new IllegalArgumentException("Invalid idNomber: " + idNomber);
             }
 
             Statement statement = con.createStatement();
@@ -100,7 +100,7 @@ public class MyModel extends AbstractDAO {
         return status;
     }
 
-    public void insertBusyTime(int idTime, int idTimeEnd, String masterIdBusy, String masterIdFree) {
+    public void insertBusyTime(int idTime, int idTimeEnd, String masterIdBusy, String masterIdFree, String masterIdService, int serviceId) {
 
         try(Connection con = ConnectorDB.getConnection()){
 
@@ -108,7 +108,7 @@ public class MyModel extends AbstractDAO {
 
             statement.executeUpdate("UPDATE masters_schedule SET "+masterIdBusy+" = 1 WHERE (ID) BETWEEN "+idTime+" AND "+idTimeEnd+"");
             statement.executeUpdate("UPDATE masters_schedule SET "+masterIdFree+" = NULL WHERE (ID) BETWEEN "+idTime+" AND "+idTimeEnd+"");
-
+            statement.executeUpdate("UPDATE masters_schedule SET "+masterIdService+" = "+serviceId+" WHERE (ID) BETWEEN "+idTime+" AND "+idTimeEnd+"");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -116,4 +116,84 @@ public class MyModel extends AbstractDAO {
             e.printStackTrace();
         }
     }
+
+    public ArrayList<CommonSchedule> getSchedule(){
+
+        ArrayList<CommonSchedule> commonSchedule = new ArrayList<>();
+
+        try(Connection con = ConnectorDB.getConnection()){
+
+            Statement statement = con.createStatement();
+
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM masters_schedule");
+            while (resultSet.next()) {
+                CommonSchedule schedule = new CommonSchedule();
+                schedule.setId(resultSet.getInt("id"));
+                schedule.setTimeInterval(resultSet.getString("time_interval"));
+                schedule.setId1service(resultSet.getInt("id1service"));
+                schedule.setId2service(resultSet.getInt("id2service"));
+                schedule.setId3service(resultSet.getInt("id3service"));
+                schedule.setId4service(resultSet.getInt("id4service"));
+                schedule.setId5service(resultSet.getInt("id5service"));
+                schedule.setId6service(resultSet.getInt("id6service"));
+                commonSchedule.add(schedule);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return commonSchedule;
+    }
+
+    public void deleteMasterService(String masterServiceId, int id){
+
+        String masterIdBusy;
+        String masterIdFree;
+        switch (masterServiceId) {
+            case "id1service":
+                masterIdFree ="id1free";
+                masterIdBusy = "id1busy";
+                break;
+            case "id2service":
+                masterIdFree ="id2free";
+                masterIdBusy = "id2busy";
+                break;
+            case "id3service":
+                masterIdFree ="id3free";
+                masterIdBusy = "id3busy";
+                break;
+            case "id4service":
+                masterIdFree ="id4free";
+                masterIdBusy = "id4busy";
+                break;
+            case "id5service":
+                masterIdFree ="id5free";
+                masterIdBusy = "id5busy";
+                break;
+            case "id6service":
+                masterIdFree ="id6free";
+                masterIdBusy = "id6busy";
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid id1service: " + masterServiceId);
+        }
+
+        try(Connection con = ConnectorDB.getConnection()){
+
+            Statement statement = con.createStatement();
+
+            statement.executeUpdate("UPDATE masters_schedule SET "+masterIdBusy+" = NULL WHERE id="+id+"");
+            statement.executeUpdate("UPDATE masters_schedule SET "+masterIdFree+" = 1 WHERE id="+id+"");
+            statement.executeUpdate("UPDATE masters_schedule SET "+masterServiceId+" = NULL WHERE id="+id+"");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    // next method
 }
