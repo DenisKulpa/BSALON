@@ -4,6 +4,19 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <context-param>
+        <param-name>isLog4jAutoInitializationDisabled</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>log4jContextName</param-name>
+        <param-value>BSALON</param-value>
+    </context-param>
+    <context-param>
+        <param-name>log4jConfiguration</param-name>
+        <param-value>file:///C:/Users/Den/Documents/BSALON/src/main/resources/log4j2.properties</param-value>
+    </context-param>
     <welcome-file-list>
         <welcome-file>guestmodepage</welcome-file>
     </welcome-file-list>
@@ -16,7 +29,7 @@
 
     <filter>
         <filter-name>AuthFilter</filter-name>
-        <filter-class>AuthFilter</filter-class>
+        <filter-class>com.salonschedule.filter.AuthFilter</filter-class>
     </filter>
 
     <filter-mapping>
