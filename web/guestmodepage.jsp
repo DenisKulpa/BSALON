@@ -81,9 +81,10 @@ ${Masters[5].getName()}&nbsp;${Masters[5].getSurname()}&nbsp;&nbsp;${Masters[5].
         </tr>
     </table>
     <br>
-    <a href="/bsalon/masterId1page">${Masters[0].getName()}&nbsp;${Masters[0].getSurname()}</a>
+    <%--<a href="/bsalon/masterId1page">${Masters[0].getName()}&nbsp;${Masters[0].getSurname()}</a>--%>
 </h1>
 </body>
+<%response.setIntHeader("Refresh", 30);%>
 </html>
 
 

@@ -1,0 +1,4 @@
+2019-01-30 14:28:57,631 INFO c.s.c.GuestmodeController [http-nio-8080-exec-4] Hello, servlet!
+2019-01-30 14:28:57,637 INFO c.s.c.GuestmodeController [http-nio-8080-exec-4] Main page (servlet started)
+2019-01-30 14:28:57,638 ERROR c.s.c.GuestmodeController [http-nio-8080-exec-4] LOGGER.ERROR
+2019-01-30 14:28:57,639 WARN c.s.c.GuestmodeController [http-nio-8080-exec-4] LOGGER.WARN
